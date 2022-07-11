@@ -4,7 +4,7 @@ For most people, solving Sudoku is not a particularly simple task. A novice can 
 <a href="#"><img src="cover.png" alt="" width="640"></a>
 </p>
 
-##Features of the Robot:
+## Features of the Robot:
 Before we can discuss the build process of the robot, we need to know the features of it and how it works. Below you will find the working of this robot:
 
 After powering on the robot, it will be ready to take voice commands from the user.
@@ -20,7 +20,7 @@ Applies a backtracking algorithm to solve the puzzle and shows the steps while s
 Finally after solving the puzzle it will show the solved puzzle on the screen and will wait for the user command to solve the next sudoku.
 While solving the sudoku, the robot will inform us about all the steps with the help of its robotics voice.
 
-##Required Libraries:
+## Required Libraries:
 
 The following python libraries you need to install in Raspberry Pi for this project:
 OpenCV: Used for image processing based tasks
