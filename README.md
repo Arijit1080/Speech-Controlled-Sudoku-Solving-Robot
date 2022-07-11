@@ -1,7 +1,7 @@
 # Speech Controlled Sudoku Solving Robot
 For most people, solving Sudoku is not a particularly simple task. A novice can need many hours to finish a straightforward sudoku problem. Because of this, we wondered if it was feasible to create a robot that could simply by looking at a sudoku problem, regardless of how difficult it is, solve it within a few seconds. Here the codes for a straightforward sudoku solver robot, to whom we can give voice commands and based on that it can quickly solve any sudoku puzzle for us. Also it will show us the whole procedure of solving the sudoku. You can see a quick demo of the robot at https://youtu.be/gCwES3D2PGY. 
 <p align="center">
-<a href="#"><img src="cover.png" alt="" width="480" height="360"></a>
+<a href="#"><img src="cover.png" alt="" width="640"></a>
 </p>
 
 #Features of the Robot:
