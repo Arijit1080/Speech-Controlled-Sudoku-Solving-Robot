@@ -5,8 +5,7 @@ For most people, solving Sudoku is not a particularly simple task. A novice can 
 </p>
 
 #Features of the Robot:
-
-	Before we can discuss the build process of the robot, we need to know the features of it and how it works. Below you will find the working of this robot:
+Before we can discuss the build process of the robot, we need to know the features of it and how it works. Below you will find the working of this robot:
 
 After powering on the robot, it will be ready to take voice commands from the user.
 At the top of its head, this robot has a LED indicator. When the LED is turned on, the robot is listening to the user and when it's turned off, the robot is processing the previous command.
