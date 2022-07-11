@@ -14,7 +14,7 @@ Before we can discuss the build process of the robot, we need to know the featur
 <li>Next, the user needs to hold a sudoku in front of the robot. It can be a sudoku on a paper or on the screen of a digital device. </li>
 <li>After holding the sudoku in front of the robot, the user needs to ask the robot to capture the puzzle.</li>
 <li>After capturing the puzzle, </li>
-<ol>The robot will detect the sudoku from the image.
+<ol><li>The robot will detect the sudoku from the image.</li>
 <li>Extracts digits from the detected sudoku and forms the unsolved puzzle.</li>
 <li>Applies a backtracking algorithm to solve the puzzle and shows the steps while solving the puzzle.</li>
 <li>Finally after solving the puzzle it will show the solved puzzle on the screen and will wait for the user command to solve the next sudoku.</li>
