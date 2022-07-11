@@ -7,8 +7,8 @@ For most people, solving Sudoku is not a particularly simple task. A novice can 
 ## Features of the Robot:
 Before we can discuss the build process of the robot, we need to know the features of it and how it works. Below you will find the working of this robot:
 
-After powering on the robot, it will be ready to take voice commands from the user.
-At the top of its head, this robot has a LED indicator. When the LED is turned on, the robot is listening to the user and when it's turned off, the robot is processing the previous command.
+  a. After powering on the robot, it will be ready to take voice commands from the user.
+  b. At the top of its head, this robot has a LED indicator. When the LED is turned on, the robot is listening to the user and when it's turned off, the      robot is processing the previous command.
 The user can ask the robot to give an intro, and then the robot will give a brief intro as it has the speaking abilities.
 The user can ask the robot to start solving the sudoku and then the robot will start video streaming.
 Next, the user needs to hold a sudoku in front of the robot. It can be a sudoku on a paper or on the screen of a digital device. 
