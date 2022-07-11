@@ -23,7 +23,7 @@ Before we can discuss the build process of the robot, we need to know the featur
 </ol>
 
 ## Required Components:
-To begin with, we must design the robot's hardware. Here, we'll make use of the following elements:
+Here, we'll make use of the following elements:
 <ol>
   <li>Raspberry pi 4 B / Raspberry Pi 3 B+ (Raspberry Pi 4 recommended)</li>
 <li>Raspberry Pi Camera Module V2</li>
@@ -40,11 +40,11 @@ To begin with, we must design the robot's hardware. Here, we'll make use of the 
 ## Required Libraries:
 
 The following python libraries you need to install in Raspberry Pi for this project:
-<ol><li>OpenCV: Used for image processing based tasks</li>
-<li>Numpy: Used for working with arrays</li>
-<li>Pytesseract: User for optical character recognition</li> 
-<li>Pygame: Used to create GUIs</li>
-<li>Speech Recognition: Used for speech recognition</li>
+<ol><li>OpenCV</li>
+<li>Numpy</li>
+<li>Pytesseract</li> 
+<li>Pygame</li>
+<li>Speech Recognition</li>
 </ol>
 
 ## Useful Resources:
