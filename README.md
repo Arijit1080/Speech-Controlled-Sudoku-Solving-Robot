@@ -25,13 +25,16 @@ Before we can discuss the build process of the robot, we need to know the featur
 ## Required Libraries:
 
 The following python libraries you need to install in Raspberry Pi for this project:
-OpenCV: Used for image processing based tasks
-Numpy: Used for working with arrays
-Pytesseract: User for optical character recognition 
-Pygame: Used to create GUIs
-Speech Recognition: Used for speech recognition
+<ol><li>OpenCV: Used for image processing based tasks</li>
+<li>Numpy: Used for working with arrays</li>
+<li>Pytesseract: User for optical character recognition</li> 
+<li>Pygame: Used to create GUIs</li>
+<li>Speech Recognition: Used for speech recognition</li>
+</ol>
 
+## Useful Resources:
 While building the solution, the following resources were very useful:
+
 https://github.com/cunananm2000/Sudoku/blob/79984e4f35c6869aae81754a6334231c4515bf92/sudokuSplitter.py
 https://www.geeksforgeeks.org/building-and-visualizing-sudoku-game-using-pygame/
 
