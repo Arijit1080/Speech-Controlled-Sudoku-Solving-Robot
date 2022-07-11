@@ -22,6 +22,21 @@ Before we can discuss the build process of the robot, we need to know the featur
 <li>While solving the sudoku, the robot will inform us about all the steps with the help of its robotics voice.</li>
 </ol>
 
+## Required Components:
+To begin with, we must design the robot's hardware. Here, we'll make use of the following elements:
+<ol>
+  <li>Raspberry pi 4 B / Raspberry Pi 3 B+ (Raspberry Pi 4 recommended)</li>
+<li>Raspberry Pi Camera Module V2</li>
+<li>Raspberry Pi Touch Screen Module </li>
+<li>Speaker (small in size)</li>
+<li>Small LED </li>
+<li>Raspberry Pi Power Supply</li>
+<li>USB Mic</li>
+<li>Jumper Wires</li>
+<li>3d Printed Body Parts</li>
+  </ol>
+
+
 ## Required Libraries:
 
 The following python libraries you need to install in Raspberry Pi for this project:
