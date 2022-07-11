@@ -37,8 +37,3 @@ While building the solution, the following resources were very useful:
 
 https://github.com/cunananm2000/Sudoku/blob/79984e4f35c6869aae81754a6334231c4515bf92/sudokuSplitter.py
 https://www.geeksforgeeks.org/building-and-visualizing-sudoku-game-using-pygame/
-
-
-## Authors
-
-**Arijit Das** 
