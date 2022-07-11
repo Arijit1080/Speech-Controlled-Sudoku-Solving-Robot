@@ -21,6 +21,7 @@ Before we can discuss the build process of the robot, we need to know the featur
   </ol>
 <li>While solving the sudoku, the robot will inform us about all the steps with the help of its robotics voice.</li>
 </ol>
+
 ## Required Libraries:
 
 The following python libraries you need to install in Raspberry Pi for this project:
