@@ -483,7 +483,7 @@ if __name__ == "__main__":
 
     sudoku_solve_thread = threading.Thread(target=sudoku_solve, args=())
     sudoku_solve_thread.start()
-    sudoku_solve_thread.join()
+    
     sample_rate = 48000
     chunk_size = 2048
     r = sr.Recognizer()
