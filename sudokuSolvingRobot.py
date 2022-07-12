@@ -6,9 +6,10 @@ import pygame
 import numpy
 import time
 import os
+import threading
 import speech_recognition as sr
-import multiprocessing
 import RPi.GPIO as GPIO
+from imutils.video import VideoStream
 
 def intro():
     global talking, face, solve_sudoku, capture
@@ -28,8 +29,8 @@ def speak(s):
 
 def faceAnimation(display_surface):
     global face, talking
-    image = pygame.image.load('face1.png')
-    image2 = pygame.image.load('face2.png')
+    image = pygame.image.load('1.png')
+    image2 = pygame.image.load('2.png')
 
     while face or talking:
         if face:
@@ -167,6 +168,15 @@ def highlightCells(cells):
         for j in range(len(cells[i])):
             cells[i][j] = highlightDigit(cells[i][j])
     return cells
+
+
+def thresh(x):
+    if x < 2:
+        return 0
+    if x < 5:
+        return 0
+    return 1
+
 
 def addPadding(img, border=10):
     return cv2.copyMakeBorder(img, 10, 10, 2, 2,
@@ -345,18 +355,22 @@ def show_puzzle(grid):
     draw(grid)
     pygame.display.update()
 
-def solve_sudoku():
+def sudoku_solve():
     global solve_sudoku, show_solution, capture
     val = 0
-    videoCaptureObject = cv2.VideoCapture(0)
+    vs = VideoStream(usePiCamera=True, resolution=(1280,720)).start()
+    time.sleep(1.0)
     img_name = "temp.png"
     while True:
         while solve_sudoku:
+
             show_solution = True
-            ret, initial_frame = videoCaptureObject.read()
+            initial_frame = vs.read()
             up_points = (screen_size_x, 360)
             frame = cv2.resize(initial_frame, up_points,
                                interpolation=cv2.INTER_LINEAR)
+            cv2.normalize(frame, frame, 0, 255,
+                          cv2.NORM_MINMAX)
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             frame = numpy.rot90(frame, 3)
             frame = numpy.fliplr(frame)
@@ -366,23 +380,22 @@ def solve_sudoku():
             if capture:
                 capture = False
                 cv2.imwrite(img_name, initial_frame)
+                time.sleep(2)
                 print("{} written!".format(img_name))
                 try:
-                    grid = extractGrid(cv2.imread("temp.png"))
+                    grid = extractGrid(cv2.imread(img_name))
                     if grid == None:
-                            print("No Sudoku found")
-                            no_suduko_message_thread = threading.Thread(
-                                target=speak, args=(
-                                    "I have not found any sudoku in the image",))
-                            no_suduko_message_thread.start()
-                            continue
+                        print("No Sudoku found")
+                        no_suduko_message_thread = threading.Thread(
+                            target=speak, args=(
+                                "I have not found any sudoku in the image",))
+                        no_suduko_message_thread.start()
+                        continue
                 except:
                     print("Error")
                     continue
 
                 grid = [list(i) for i in zip(*grid)]
-                print(grid)
-
                 show_puzzle(grid)
                 recognised_message_thread = threading.Thread(
                     target=speak, args=(
@@ -415,7 +428,7 @@ def solve_sudoku():
                     if flag1 == 1:
                         draw_box()
                     pygame.display.update()
-
+                    time.sleep(1)
                     solved_message_thread = threading.Thread(
                         target=speak,
                         args=("I have solved the sudoku",))
@@ -431,7 +444,7 @@ def solve_sudoku():
     pygame.quit()
 
 if __name__ == "__main__":
-    pos_x = 50
+    pos_x = 0
     pos_y = -1
     os.environ['SDL_VIDEO_WINDOW_POS'] = '%i,%i' % (
         pos_x, pos_y)
@@ -456,21 +469,21 @@ if __name__ == "__main__":
     pygame.font.init()
     screen = pygame.display.set_mode(
         (screen_size_x, screen_size_y), pygame.NOFRAME)
-    font1 = pygame.font.SysFont("comicsans", 20)
+    font1 = pygame.font.SysFont("comicsans", 25)
 
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(40, GPIO.OUT, initial=GPIO.LOW)
 
-    intro_thread = multiprocessing.Process(target=intro, args=())
+    intro_thread = threading.Thread(target=intro, args=())
     intro_thread.start()
-    face_thread = multiprocessing.Process(target=faceAnimation,
+    face_thread = threading.Thread(target=faceAnimation,
                                    args=(screen,))
     face_thread.start()
 
-    solve_sudoku_thread = multiprocessing.Process(target=solve_sudoku, args=())
-    solve_sudoku_thread.start()
-
+    sudoku_solve_thread = threading.Thread(target=sudoku_solve, args=())
+    sudoku_solve_thread.start()
+    sudoku_solve_thread.join()
     sample_rate = 48000
     chunk_size = 2048
     r = sr.Recognizer()
@@ -494,6 +507,7 @@ if __name__ == "__main__":
                 elif any(x in text for x in
                          ["start", "sudoku", "solving"]):
                     solve_sudoku = True
+                    face = False
                 elif any(x in text for x in ["capture"]):
                     capture = True
                 elif any(x in text for x in ["stop"]):
@@ -512,6 +526,7 @@ if __name__ == "__main__":
 
             except sr.RequestError as e:
                 print("error")
+
 
 
 
