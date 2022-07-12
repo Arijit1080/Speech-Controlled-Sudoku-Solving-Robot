@@ -29,8 +29,8 @@ def speak(s):
 
 def faceAnimation(display_surface):
     global face, talking
-    image = pygame.image.load('1.png')
-    image2 = pygame.image.load('2.png')
+    image = pygame.image.load('face1.png')
+    image2 = pygame.image.load('face2.png')
 
     while face or talking:
         if face:
