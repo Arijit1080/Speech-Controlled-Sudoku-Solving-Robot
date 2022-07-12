@@ -40,11 +40,12 @@ Here, we'll make use of the following elements:
 ## Required Libraries:
 
 The following python libraries you need to install in Raspberry Pi for this project:
-<ol><li>OpenCV</li>
+<ol><li>OpenCV v4.2</li>
 <li>Numpy</li>
 <li>Pytesseract</li> 
 <li>Pygame</li>
 <li>Speech Recognition</li>
+<li>imutils<\li>
 </ol>
 
 ## Useful Resources:
