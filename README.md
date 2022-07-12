@@ -45,7 +45,7 @@ The following python libraries you need to install in Raspberry Pi for this proj
 <li>Pytesseract</li> 
 <li>Pygame</li>
 <li>Speech Recognition</li>
-<li>imutils<\li>
+<li>imutils</li>
 </ol>
 
 ## Useful Resources:
